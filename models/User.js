@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
         trim: true,    // trim -> qwerty babo@gmail.com 같이 스페이스, 공백을 없애주는 역할
         unique: 1    // 똑같은 이메일은 쓰지 못하게 함
     },
-    password {
+    password: {
         type: String,
         minlength: 6
     },
@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema({
     token: {         // 유효성 같은 것을 관리
         type: String
     },
-    tokenExp {       // token이 사용할 수 있는 기간 부여
+    tokenExp: {       // token이 사용할 수 있는 기간 부여
         type: Number
     }
 })
