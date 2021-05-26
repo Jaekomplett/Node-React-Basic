@@ -3,6 +3,7 @@ const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
 
+//mongoDB key값 바인딩
 const config = require('./config/key')
 
 const { User } = require("./models/User");
@@ -16,7 +17,9 @@ app.use(bodyParser.json());
 // 위 2개가 의미하는 것은 body-parser가
 // 클라이언트에서 오는 정보를 서버에서 분석해서 가져올 수 있게 해줌.
 
+
 const mongoose = require('mongoose')
+//
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected...'))
